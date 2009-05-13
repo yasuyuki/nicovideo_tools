@@ -2,6 +2,8 @@ require 'rubygems'
 require 'nicovideo'
 require 'movie_id2html'
 require 'mylist_just_added'
+require 'hpricot'
+WWW::Mechanize.html_parser = Hpricot
 
 # set account
 mail = ARGV.shift
@@ -25,5 +27,5 @@ videos.each do |video|
     end
   end
   puts video_page ? video_page.html : video
-  sleep 20
+  sleep 23
 end
